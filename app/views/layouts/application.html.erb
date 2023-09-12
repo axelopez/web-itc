@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Itcscience</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+<body data-controller="index">
+  <header class="header">
+    <nav class="nav">
+      <div class="logo"><%= image_tag("logo.webp") %></div>
+      <ul class="nav-menu-complete">
+        <li class="nav_element"><a href="/">INICIO</a></li>
+        <li class="nav_element"><a href="/blog">BLOG</a></li>
+        <li class="nav_element"><a href="/newsletter">NEWSLETTER</a></li>
+        <li class="nav_element"><a href="/community">COMUNIDAD</a></li>
+        <li class="nav_element"><a href="/contacto">CONTACTO</a></li>
+      </ul>
+
+      <div class="btn not-active" id="btn-ham">
+        <span class="span"></span>
+        <span class="span"></span>
+        <span class="span"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main"><%= yield %></main>
+
+  <footer class="footer">
+    <p>ITCScience 2023 &copy;</p>
+  </footer>
+
+ 
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+# This file should contain database configuration used by Rails.
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:                                                    
+  adapter: postgresql
+  host: ec2-54-211-177-159.compute-1.amazonaws.com
+  encoding: unicode
+  database: dael76lc6ic7b7
+  pool:     5
+  username: evkrdzxtmpxtua
+  password: 64e053346db3a1c249ecbc9257f97cf745f69f647ed0a15fdc8afdca3304b91d
+  template: template0
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
