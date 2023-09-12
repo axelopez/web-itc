@@ -1,0 +1,15 @@
+
+<%= simple_form_for(@contacto, wrapper: :custom_form, html: {class: "contact-form"}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+ 
+    <%= f.input :nombre, wrapper_html: {class: "input-effect"} %>
+    <%= f.input :email, wrapper_html: {class: "input-effect"} %>
+    <%= f.input :telefono, wrapper_html: {class: "input-effect"} %>
+    <%= f.input :mensaje, wrapper_html: {class: "input-effect"} %>
+   
+
+    <%# f.button :submit, "Enviar Mensaje", class: "btn-submit" %>
+    <button type="submit">enviar mensaje</button>
+<% end %>

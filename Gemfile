@@ -76,3 +76,4 @@ gem "devise"
 gem "will_paginate"
 gem 'aws-sdk-s3'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'annotate'

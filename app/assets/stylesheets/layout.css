@@ -1,11 +1,4 @@
-body {
-  background-color: #212121;
-  color: white;
-
-  font-family: Arial, Helvetica, sans-serif;
-}
-
- * {
+* {
   box-sizing: border-box;
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -63,7 +56,7 @@ html {
 }
 
 .nav_element a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .nav_element a::before {
@@ -146,7 +139,10 @@ span+span {
   animation: ease 0.7s bottom-2 forwards;
 }
 
-
+.flash
+{
+  padding-top:20px;
+}
 
 /* aimation button */
 @keyframes top {

@@ -22,7 +22,7 @@
         <li class="nav_element"><a href="/">INICIO</a></li>
         <li class="nav_element"><a href="/blog">BLOG</a></li>
         <li class="nav_element"><a href="/newsletter">NEWSLETTER</a></li>
-        <li class="nav_element"><a href="/community">COMUNIDAD</a></li>
+        <li class="nav_element"><a href="/comunidad">COMUNIDAD</a></li>
         <li class="nav_element"><a href="/contacto">CONTACTO</a></li>
       </ul>
 
@@ -34,7 +34,11 @@
     </nav>
   </header>
 
-  <main class="main"><%= yield %></main>
+  
+  <main class="main">
+   <%= render "/layouts/flash"%>
+   <%= yield %>
+  </main>
 
   <footer class="footer">
     <p>ITCScience 2023 &copy;</p>
