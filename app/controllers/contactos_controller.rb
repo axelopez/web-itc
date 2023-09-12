@@ -1,10 +1,13 @@
 class ContactosController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create]
+  before_action :authenticate_user!, except: [:new, :create, :confirmado]
   before_action :set_contacto, only: %i[ show edit update destroy ]
 
   # GET /contactos or /contactos.json
   def index
     @contactos = Contacto.all
+  end
+
+  def confirmado
   end
 
   # GET /contactos/1 or /contactos/1.json
@@ -26,7 +29,7 @@ class ContactosController < ApplicationController
 
     respond_to do |format|
       if @contacto.save
-        format.html { redirect_to "/contacto", notice: "Tu información ha sido recibida pronto nos pondremos en contacto contigo." }
+        format.html { redirect_to "/contacto/confirmado", notice: "Tu información ha sido recibida pronto nos pondremos en contacto contigo." }
         format.json { render :show, status: :created, location: @contacto }
       else
         format.html { render :new, status: :unprocessable_entity }
