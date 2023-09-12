@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: blogs
+#
+#  id          :bigint           not null, primary key
+#  titulo      :string
+#  contenido   :text
+#  estado      :string
+#  comentarios :text
+#  user_id     :bigint           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  titulo: MyString
+  contenido: MyText
+  estado: MyString
+  comentarios: MyText
+  user: one
+
+two:
+  titulo: MyString
+  contenido: MyText
+  estado: MyString
+  comentarios: MyText
+  user: two

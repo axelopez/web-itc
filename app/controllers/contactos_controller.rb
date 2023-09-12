@@ -4,7 +4,7 @@ class ContactosController < ApplicationController
 
   # GET /contactos or /contactos.json
   def index
-    @contactos = Contacto.all
+    @contactos = Contacto.paginate(page: params[:page], per_page: 8)
   end
 
   def confirmado

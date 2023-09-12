@@ -3,4 +3,10 @@
 <section class="contact">
     <h1 class="title">Contactanos</h1>
     <%= render "/contactos/form", contacto: @contacto %>
+
+    <% if user_signed_in? %>
+    <br>
+    <br>
+    <%= link_to "Ver mensajes", contactos_path %>
+    <% end %>
 </section>

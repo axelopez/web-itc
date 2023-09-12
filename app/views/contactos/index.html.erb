@@ -1,14 +1,33 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Contactos</h1>
+<%= stylesheet_link_tag 'datatable' %>
+<section>
 
-<div id="contactos">
-  <% @contactos.each do |contacto| %>
-    <%= render contacto %>
-    <p>
-      <%= link_to "Show this contacto", contacto %>
-    </p>
-  <% end %>
+
+<div class="datatable-container">
+<h1>Solicitudes de Contacto</h1>
+ <table class="datatable">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Mensaje</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @contactos.order("id desc").each do |contacto| %>
+      <tr>        
+        <td><%= contacto.created_at %></td>
+        <td><%= contacto.nombre %></td>
+        <td><%= contacto.email %></td>
+        <td><%= contacto.telefono %></td>
+        <td><%= contacto.mensaje %></td>
+      </tr>
+   <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @contactos, next_label: "Siguiente", previous_label: "Anterior" %>
 </div>
-
-<%= link_to "New contacto", new_contacto_path %>
+</section>

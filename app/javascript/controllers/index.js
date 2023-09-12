@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import IndexController from "./index_controller"
 application.register("index", IndexController)
+
+import RichtextController from "./richtext_controller"
+application.register("richtext", RichtextController)

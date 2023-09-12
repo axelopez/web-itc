@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   resources :contactos
   devise_for :users
   get 'comunidad', to: 'visitors#comunidad'
@@ -8,4 +9,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "visitors#index"
+
+  #devise_for :users , path_names: {
+  #  sign_up: '/ee00442f89b589d2120f4141a415dded'
+  #}
+ 
 end

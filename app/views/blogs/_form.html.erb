@@ -1,0 +1,17 @@
+
+<!-- Core build with no theme, formatting, non-essential modules -->
+ 
+
+<%= simple_form_for(@blog) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs" data-controller="richtext">
+    <%= f.input :titulo %>
+    <%= f.input :contenido %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, label: "Registrar" %>
+  </div>
+<% end %>
