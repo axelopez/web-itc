@@ -4,15 +4,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
-development:                                                    
-  adapter: postgresql
-  host: ec2-54-211-177-159.compute-1.amazonaws.com
-  encoding: unicode
-  database: dael76lc6ic7b7
-  pool:     5
-  username: evkrdzxtmpxtua
-  password: 64e053346db3a1c249ecbc9257f97cf745f69f647ed0a15fdc8afdca3304b91d
-  template: template0
+development:
+  <<: *default
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  encoding: 'unicode'
+  database: <%= ENV['DATABASE_NAME'] || 'itc' %>
+  pool: <%= ENV['DATABASE_POOL'] || 5 %>
+  username: <%= ENV['DATABASE_USERNAME'] || 'itc' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'password' %>
+  template: <%= ENV['DATABASE_TEMPLATE'] || 'template0' %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
