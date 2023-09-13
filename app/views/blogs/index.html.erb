@@ -1,14 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag 'blog.css' %>
 
-<h1>Blogs</h1>
 
-<div id="blogs">
+<article class="article-container">
   <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
-  <% end %>
-</div>
+  <article class="post" id="<%= blog.id %>">
+    <a href="/blogs/<%= blog.id %>">
+     
+    <%= image_tag url_for(blog.imagen) %>
 
-<%= link_to "New blog", new_blog_path %>
+    </a>
+    
+    <div class="post_body">
+        <h2 class="post-title">
+          <a href="blog/<%= blog.id %>" ><%= blog.titulo %></a>
+
+        </h2>
+      <p><%= blog.descripcion %></p>
+    </div>
+  
+  </article>
+  <% end %>
+
+
+</article>
+<% if user_signed_in? %>
+<div style="text-align:center">
+  <%= link_to "Nueva Entrada", new_blog_path %>
+</div>
+<% end %>

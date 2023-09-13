@@ -8,10 +8,19 @@
 
   <div class="form-inputs" data-controller="richtext">
     <%= f.input :titulo %>
-    <%= f.input :contenido %>
+    <br><br>
+    <%= f.input :descripcion %>
+     
+    <br><br>
+    <%= f.input :imagen %>
+    <br><br>
+    <textarea id="rich-contenido">
+      <%= @blog.contenido %>
+    </textarea>
+    <%= f.input :contenido, as: :hidden  %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, label: "Registrar" %>
+    <%= f.button :submit,  "Registrar" %>
   </div>
 <% end %>

@@ -1,10 +1,11 @@
 <%= stylesheet_link_tag 'login' %>
-<section class="contact">
+<section class="login">
 <h2>Identificate</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <span class="subtitle">Email:</span>
+    <br>
     <br>
     <%= f.input :email,
                 label: false,
@@ -13,6 +14,7 @@
                 input_html: { autocomplete: "email" } %>
     <br>
     <span class="subtitle">Contraseña:</span>
+    <br>
     <br>
     <%= f.input :password,
                 required: false,

@@ -1,33 +1,27 @@
 
 <%= stylesheet_link_tag 'datatable' %>
-<section>
 
+<div class="container-table">
+  <h2>Solicitudes de Contacto <small>Mensajes enviados</small></h2>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Fecha</div>
+      <div class="col col-2">Nombre</div>
+      <div class="col col-3">Email</div>
+      <div class="col col-4">Teléfono</div>
+    </li>
+     <% @contactos.order("id desc").each do |contacto| %>
+    <li class="table-row">
+      <div class="col col-1" data-label="Fecha"><%= contacto.created_at.strftime("%d/%m/%Y") %></div>
+      <div class="col col-2" data-label="Nombre"><%= contacto.nombre %></div>
+      <div class="col col-3" data-label="Email"><%= contacto.email %></div>
+      <div class="col col-4" data-label="Telefono"><%= contacto.telefono %></div>
+    </li>
+    <% end %>
+     
+  </ul>
 
-<div class="datatable-container">
-<h1>Solicitudes de Contacto</h1>
- <table class="datatable">
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Teléfono</th>
-        <th>Mensaje</th>
-      </tr>
-    </thead>
-
-    <tbody>
-    <% @contactos.order("id desc").each do |contacto| %>
-      <tr>        
-        <td><%= contacto.created_at %></td>
-        <td><%= contacto.nombre %></td>
-        <td><%= contacto.email %></td>
-        <td><%= contacto.telefono %></td>
-        <td><%= contacto.mensaje %></td>
-      </tr>
-   <% end %>
-    </tbody>
-  </table>
+  
   <%= will_paginate @contactos, next_label: "Siguiente", previous_label: "Anterior" %>
 </div>
-</section>
+

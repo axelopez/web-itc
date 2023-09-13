@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_blog, only: %i[ show edit update destroy ]
+ 
 
   # GET /blogs or /blogs.json
   def index
@@ -22,6 +24,8 @@ class BlogsController < ApplicationController
   # POST /blogs or /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
+    @blog.estado = "Aprobado"
 
     respond_to do |format|
       if @blog.save
@@ -65,6 +69,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:titulo, :contenido, :estado, :comentarios, :user_id)
+      params.require(:blog).permit(:titulo, :contenido, :estado, :comentarios, :user_id, :imagen, :descripcion)
     end
 end

@@ -5,7 +5,23 @@ import plugins from 'suneditor/src/plugins'
 export default class extends Controller {
 
   connect() {
-    suneditor.create('blog_contenido', {
+    /*event previos a subimt form, find form in page*/
+     
+      const form = document.querySelector('form')
+      
+     
+      form.addEventListener('submit', (e) => {
+        
+        /*find element with id contenido*/
+        const contenidoInput = document.getElementById('blog_contenido')
+        /*set value of contenidoInput with contenido value*/
+        contenidoInput.value = editor.getContents();
+        /*continue with submit*/
+        form.submit();
+      });
+    
+
+      const editor= suneditor.create('rich-contenido', {
       plugins: plugins,
       buttonList: [
           ['undo', 'redo'],

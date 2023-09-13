@@ -78,3 +78,4 @@ gem "will_paginate"
 gem 'aws-sdk-s3'
 
 gem 'annotate'
+gem "activestorage-validator"

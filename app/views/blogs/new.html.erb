@@ -1,6 +1,10 @@
-<%# stylesheet_link_tag 'blog.css' %>
+
 <link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
-<h1>New blog</h1>
+ 
+  
+<%= stylesheet_link_tag 'blog-form.css' %>
+
+<h1 style="text-align:center;">Nueva entrada al Blog</h1>
 
 <%= render "form", blog: @blog %>
 
