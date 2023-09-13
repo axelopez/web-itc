@@ -6,7 +6,8 @@
   <article class="post" id="<%= blog.id %>">
     <a href="/blogs/<%= blog.id %>">
      
-    <%= image_tag url_for(blog.imagen) %>
+    <%= image_tag url_for(blog.imagen) if blog.imagen.attached? %>
+    <%= image_tag("logo.webp") unless blog.imagen.attached? %>
 
     </a>
     

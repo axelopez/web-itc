@@ -3,9 +3,8 @@
 
   <h1 style="text-align:center"><%= @blog.titulo %></h1>
  
-      <%= image_tag url_for(@blog.imagen), style: "width:50%" %>
-  
-
+      <%= image_tag url_for(@blog.imagen), style: "width:50%" if @blog.imagen.attached? %>
+      <%= image %>
       <%= @blog.contenido.html_safe %>
 
       <hr>
