@@ -4,7 +4,7 @@
   <h1 style="text-align:center"><%= @blog.titulo %></h1>
  
       <%= image_tag url_for(@blog.imagen), style: "width:50%" if @blog.imagen.attached? %>
-      <%= image %>
+      <%= image_tag("logo.webp") unless @blog.imagen.attached? %>
       <%= @blog.contenido.html_safe %>
 
       <hr>
