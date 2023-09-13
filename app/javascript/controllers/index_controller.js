@@ -6,7 +6,7 @@ export default class extends Controller {
           console.log("La aventura comienza")
           const $ = (element) => document.getElementById(element)
 
-      document.addEventListener('DOMContentLoaded', () => {
+    
         let menuIsactive = false
         var menu = $('btn-ham')
 
@@ -32,7 +32,7 @@ export default class extends Controller {
             menuIsactive = true
           }
         })
-      })
+       
 
       /* Utiliti for hamburguer button */
       const btn = document.getElementById('btn-ham')

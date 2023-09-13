@@ -18,9 +18,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-<body data-controller="index">
+<body >
   <header class="header">
-    <nav class="nav">
+    <nav class="nav" data-controller="index">
       <div class="logo">
       <a href="/"><%= image_tag("logo.webp") %></a>
       
